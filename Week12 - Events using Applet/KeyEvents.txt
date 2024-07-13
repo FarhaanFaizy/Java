@@ -1,0 +1,40 @@
+import java.awt.*;  
+import java.awt.event.*;  
+public class KeyEvents implements KeyListener
+{
+	Frame f=new Frame("Window Adapter");
+	Label l;    
+	KeyEvents()
+	{  
+        	f.addKeyListener(this);
+		f.addWindowListener(new WindowAdapter() 
+		{    
+            		public void windowClosing (WindowEvent e) 
+			{    
+                		f.dispose();    
+            		}    
+        	});   
+		f.setSize(300,300);  
+        	f.setLayout(null);  
+        	f.setVisible(true);  
+		l=new Label(); 
+        	l.setBounds(100,100,100,20);  
+        	f.add(l);   
+    	}  
+    	public void keyPressed (KeyEvent e) 
+	{    
+        	l.setText ("Key Pressed");    
+    	}    
+    	public void keyReleased (KeyEvent e) 
+	{    
+        	l.setText ("Key Released");    
+    	}    
+    	public void keyTyped (KeyEvent e) 
+	{    
+        	l.setText ("Key Typed");    
+    	}  
+	public static void main(String[] args) 
+	{  
+    		new KeyEvents();  
+	}  
+} 

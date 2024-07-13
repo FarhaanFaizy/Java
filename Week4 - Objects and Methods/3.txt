@@ -1,0 +1,78 @@
+import java.util.*;
+class Emp
+{
+	Scanner sc=new Scanner(System.in);
+	String name;
+	int id;
+	int sal;
+	void read_emp()
+	{
+		System.out.println("\nEnter employee name:");
+		name=sc.nextLine();
+		System.out.println("\nEnter employee id:");
+		id=sc.nextInt();
+		System.out.println("\nEnter employee salary:");
+		sal=sc.nextInt();
+	}
+}
+class Permanent_employee extends Emp
+{
+	void print_emp()
+	{
+		//sal=sal*(1.05);
+		System.out.println("Name   :"+name);
+		System.out.println("id     :"+id);
+		System.out.println("salary :"+(sal*1.05));
+	}
+}
+class Temporary_employee extends Emp
+{
+	void print_emp()
+	{
+		//sal=sal*1.035;
+		System.out.println("Name   :"+name);
+		System.out.println("id     :"+id);
+		System.out.println("salary :"+(sal*1.035));
+	}
+}
+class All_emp
+{
+	public static void main(String[] args)
+	{
+		Permanent_employee ob1=new Permanent_employee();
+		Temporary_employee ob2=new Temporary_employee();
+		System.out.println("--PERMANENT EMPLOYEE--");
+		ob1.read_emp();
+		ob1.print_emp();
+		System.out.println("--TEMPORARY EMPLOYEE--");
+		ob2.read_emp();
+		ob2.print_emp();
+	}
+}
+output:
+--PERMANENT EMPLOYEE--
+
+Enter employee name:
+f
+
+Enter employee id:
+2
+
+Enter employee salary:
+235
+Name   :f
+id     :2
+salary :246.75
+--TEMPORARY EMPLOYEE--
+
+Enter employee name:
+ff
+
+Enter employee id:
+22
+
+Enter employee salary:
+235
+Name   :ff
+id     :22
+salary :243.225

@@ -1,0 +1,37 @@
+import java.util.*;
+class Room
+{
+	void area()
+	{
+		System.out.println("No length and breadth given and hence area=0");
+	}
+	void area(int a)
+	{
+		System.out.pritln("only 1 side is given assuming it's a sqaure ,hence area="+(a*a));
+	}
+	void area(int a,int b)
+	{
+		System.out.println("Area="+a*b);
+	}
+	public static void main(String[] args)
+	{
+		Scanner sc=new Scanner(System.in);
+		Room ob=new Room();
+		ob.area();
+		System.out.println("Enter a side :");
+		int a=sc.nextInt();
+		ob.area(a);
+		System.out.println("Enter length and breadth");
+		a=sc.nextInt();
+		int b=sc.nextInt();
+		ob.area(a,b);
+	}
+}
+output:
+No length and breadth given and hence area=0
+Enter a side :
+3
+only 1 side is given assuming it's a sqaure ,hence area=9
+Enter length and breadth
+2 4
+Area=8

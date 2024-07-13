@@ -1,0 +1,58 @@
+import java.util.*;
+abstract class Shape
+{
+	int a,b=0;
+	abstract void printArea();
+}
+class Rectangle extends Shape
+{
+	void printArea()
+	{
+		System.out.println("Area="+a*b);
+	}
+}
+class Triangle extends Shape
+{
+	void printArea()
+	{
+		System.out.println("Area="+0.5*a*b);
+	}
+}
+class Circle extends Shape
+{
+	void printArea()
+	{
+		System.out.println("Area="+a*a*22/7);
+	}
+}
+class Main
+{
+	public static void main(String[] args)
+	{
+		Scanner sc=new Scanner(System.in);
+		Rectangle ob1=new Rectangle();
+		Triangle ob2=new Triangle();
+		Circle ob3=new Circle();
+		System.out.println("Enter sides of Rectangle:");
+		ob1.a=sc.nextInt();
+		ob1.b=sc.nextInt();
+		ob1.printArea();
+		System.out.println("Enter base and height of Triangle:");
+		ob2.a=sc.nextInt();
+		ob2.b=sc.nextInt();
+		ob2.printArea();
+		System.out.println("Enter radius of Circle:");
+		ob3.a=sc.nextInt();
+		ob3.printArea();
+	}
+}
+output:
+Enter sides of Rectangle:
+2 4
+Area=8
+Enter base and height of Triangle:
+3 4
+Area=6.0
+Enter radius of Circle:
+7
+Area=154

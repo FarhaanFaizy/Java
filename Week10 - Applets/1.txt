@@ -1,0 +1,26 @@
+labprog.java----------------------------
+import java.awt.*;
+import java.applet.*;
+public class labprog extends Applet
+{
+     String msg="";
+     public void paint(Graphics g)
+     {
+        String str=getParameter("msg");
+	g.drawString(str,50, 50);
+     }
+}
+------------------------------------------
+labprog.html------------------------------
+<html>
+<body>
+<applet code="labprog.class" width="300" height="300">  
+<param name="msg" value="Farhaan Faizy"> 
+</applet>
+</body>
+</html>
+------------------------------------------
+command lines-----------------------------
+C:\Users\exam2\Desktop\y21cs102>javac labprog.java
+
+C:\Users\exam2\Desktop\y21cs102>appletviewer labprog.html

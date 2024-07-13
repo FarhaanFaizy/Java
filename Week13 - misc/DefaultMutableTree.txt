@@ -1,0 +1,37 @@
+import java.awt.*;
+import javax.swing.*;
+import javax.swing.tree.DefaultMutableTreeNode;
+class TreeEx
+{
+	JFrame f;
+	void func()
+	{
+		f=new JFrame();
+		DefaultMutableTreeNode a=new DefaultMutableTreeNode("A");
+		DefaultMutableTreeNode b=new DefaultMutableTreeNode("B");
+		DefaultMutableTreeNode c=new DefaultMutableTreeNode("C");
+		DefaultMutableTreeNode d=new DefaultMutableTreeNode("D");
+		DefaultMutableTreeNode e=new DefaultMutableTreeNode("E");
+		DefaultMutableTreeNode j=new DefaultMutableTreeNode("F");
+		DefaultMutableTreeNode g=new DefaultMutableTreeNode("G");
+		DefaultMutableTreeNode h=new DefaultMutableTreeNode("H");
+		DefaultMutableTreeNode i=new DefaultMutableTreeNode("I");
+		a.add(b);
+		a.add(c);
+		a.add(d);
+		b.add(e);
+		b.add(j);
+		c.add(g);
+		c.add(h);
+		j.add(i);
+		f.setLayout(new BorderLayout(20, 15));
+		JTree t=new JTree(a);
+		f.add(t,BorderLayout.CENTER);
+		f.setSize(200,200);
+		f.setVisible(true);
+	}
+	public static void main(String args[])
+	{
+		TreeEx ob=new TreeEx();ob.func();
+	}
+}

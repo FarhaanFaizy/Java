@@ -1,0 +1,19 @@
+class A
+{
+	int a=10;
+}
+class B extends A
+{
+	int b=20;
+}
+class Inher extends B
+{
+	int c=30;
+	public static void main(String[] args)
+	{
+		Inher ob=new Inher();
+		System.out.println(ob.a+" "+ob.b+" "+ob.c);
+	}
+}
+output:
+10 20 30

@@ -1,0 +1,26 @@
+class Outer
+{
+	int x=99;
+	void test()
+	{
+		Inner ob=new Inner();
+		ob.display();
+	}
+	class Inner
+	{
+		void display()
+		{
+			System.out.println("x="+x);
+		}
+	}
+}
+class InnerClassDemo
+{
+	public static void main(String[] args)
+	{
+		Outer obj=new Outer();
+		obj.test();
+	}
+}
+output:
+x=99

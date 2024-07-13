@@ -1,0 +1,24 @@
+class greatestofthree
+{
+	static int a=10,b=3,c=5;
+	public static void main(String[] args)
+	{
+		if (a>b && a>c)
+		{
+			System.out.println(a+ " " +" is Greatest of the three");
+		}
+		else
+		{
+			if (b>c)
+			{
+				System.out.println(b + " "+ " is Greatest of the three");
+			}
+			else
+			{
+				System.out.println(c + " "+ " is Greatest of the three");
+			}
+		}
+	}
+}
+output:
+10  is Greatest of the three

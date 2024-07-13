@@ -1,0 +1,48 @@
+import java.awt.*;  
+import java.awt.event.*;  
+public class MouseEvents2 implements MouseListener
+{
+	Frame f=new Frame("Window Adapter");
+	Label l;    
+	MouseEvents2()
+	{  
+        	f.addMouseListener(this);
+		f.addWindowListener(new WindowAdapter() 
+		{    
+            		public void windowClosing (WindowEvent e) 
+			{    
+                		f.dispose();    
+            		}    
+        	});   
+		f.setSize(300,300);  
+        	f.setLayout(null);  
+        	f.setVisible(true);  
+		l=new Label(); 
+        	l.setBounds(100,100,100,20);  
+        	f.add(l);   
+    	}  
+    	public void mouseClicked(MouseEvent e) 
+	{  
+        	l.setText("Mouse Clicked");  
+    	}  
+    	public void mouseEntered(MouseEvent e) 
+	{  
+        	l.setText("Mouse Entered");  
+    	}  
+    	public void mouseExited(MouseEvent e) 
+	{  
+        	l.setText("Mouse Exited");  
+    	}  
+    	public void mousePressed(MouseEvent e)
+	{  
+        	l.setText("Mouse Pressed");  
+    	}  
+    	public void mouseReleased(MouseEvent e) 
+	{  
+        	l.setText("Mouse Released");  
+    	}  
+	public static void main(String[] args) 
+	{  
+    		new MouseEvents2();  
+	}  
+} 

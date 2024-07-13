@@ -1,0 +1,71 @@
+import java.util.*;
+class Student
+{
+	Scanner sc=new Scanner(System.in);
+	String name;
+	int rollno;
+	Student()
+	{
+		System.out.printf("\nEnter Student's name:");
+		name=sc.nextLine();
+		System.out.printf("\nEnter Student's Rollno:");
+		rollno=sc.nextInt();
+	}
+}
+class Test extends Student
+{
+	Scanner sc=new Scanner(System.in);
+	int[] m=new int[6];
+	Test()
+	{
+		System.out.printf("\nEnter marks of 6 Subjects:");
+		for(int i=0;i<6;i++)
+			m[i]=sc.nextInt();
+	}
+}
+class Result extends Test
+{
+	Scanner sc=new Scanner(System.in);
+	int Total;
+	Result()
+	{
+		Total=m[0]+m[1]+m[2]+m[3]+m[4]+m[5];
+	}
+	public static void main(String[] args)
+	{
+		Scanner sc=new Scanner(System.in);
+		System.out.printf("\nEnter number of Students:");
+		int n=sc.nextInt();
+		Result ob[]=new Result[n];
+		for(int i=0;i<n;i++)
+		{
+			ob[i]=new Result();
+			System.out.printf("\n\nStudent name:%s\nRollNo      :%d\nTotal Marks :%d\n\n",ob[i].name,ob[i].rollno,ob[i].Total);
+		}
+	}
+}
+output:
+Enter number of Students:2
+
+Enter Student's name:Farhaan
+
+Enter Student's Rollno:102
+
+Enter marks of 6 Subjects:29 30 28 30 30 29
+
+
+Student name:Farhaan
+RollNo      :102
+Total Marks :176
+
+
+Enter Student's name:Faizy
+
+Enter Student's Rollno:201
+
+Enter marks of 6 Subjects:30 30 30 29 29 28
+
+
+Student name:Faizy
+RollNo      :201
+Total Marks :176

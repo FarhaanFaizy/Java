@@ -1,0 +1,74 @@
+mport java.util.*;
+interface Students
+{
+	void getvalue();
+}
+interface Department
+{
+	void getattendance();
+}
+class Exam implements Students,Department
+{
+	int sno,C;
+	int[] attendance=new int[4];
+	String sname;
+	Scanner sc=new Scanner(System.in);
+	double avg=0;
+	public void getvalue()
+	{
+		System.out.println("Enter student name:");
+		sname=sc.nextLine();
+		System.out.println("Enter student num:");
+		sno=sc.nextInt(); 
+		System.out.println("Enter student class:");
+		C=sc.nextInt();
+	}
+	public void getattendance()
+	{
+		System.out.println("Enter all 4 subject attendances in percentage:");
+		for(int i=0;i<4;i++)
+		{
+			attendance[i]=sc.nextInt();
+		}
+	}
+	void calattendance()
+	{
+		for(int i=0;i<4;i++)
+		{
+			avg+=attendance[i];
+		}
+		avg=avg/4;
+	}
+	boolean eligible()
+	{
+		if(avg<75)
+			return false;
+		else
+			return true;
+	}
+	public static void main(String[] args)
+	{
+		Exam ob=new Exam();
+		ob.getvalue();
+		ob.getattendance();
+		ob.calattendance();
+		boolean yn=ob.eligible();
+		if (yn==true)
+			System.out.println("ELIGIBLE");
+		else
+			System.out.println("INELIGIBLE");
+	}
+}
+output:
+Enter student name:
+Faizy
+Enter student num:
+102
+Enter student calss:
+12
+Enter all subject attendance in percentage:
+89
+98
+97
+80
+ELIGIBLE

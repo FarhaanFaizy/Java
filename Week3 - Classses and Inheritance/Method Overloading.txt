@@ -1,0 +1,27 @@
+import java.util.*;
+class Time
+{
+	Time(int h)
+	{
+		System.out.println(h+" o'clock");
+	}
+	Time(int h,int m)
+	{
+		System.out.println(h+":"+m);
+	}
+	Time(int h,int m,int s)
+	{
+		System.out.println(h+":"+m+":"+s);
+	}
+	public static void main(String[] args)
+	{
+		int h=12,m=59,s=42;
+		Time ob1=new Time(h);
+		Time ob2=new Time(h,m);
+		Time ob3=new Time(h,m,s);
+	}
+}
+output:
+12 o'clock
+12:59
+12:59:42

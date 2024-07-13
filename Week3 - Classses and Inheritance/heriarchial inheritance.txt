@@ -1,0 +1,38 @@
+class A
+{
+	int a=10;
+	A()
+	{
+		System.out.println("In class A , a="+a);
+	}
+}
+class B extends A
+{
+	int b=20;
+	B()
+	{
+		System.out.println("In class B extends A , \na="+a+"\nb="+b);
+	}
+}
+class HeirInh extends A
+{
+	int c=30;
+	HeirInh()
+	{
+		System.out.println("In class C extends A , \na="+a+"\nc="+c);
+	}
+	public static void main(String[] args)
+	{
+		B ob1=new B();
+		HeirInh ob2=new HeirInh();		
+	}
+}
+output:
+In class A , a=10
+In class B extends A ,
+a=10
+b=20
+In class A , a=10
+In class C extends A ,
+a=10
+c=30

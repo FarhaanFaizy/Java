@@ -1,0 +1,58 @@
+import java.util.Random;
+public class GenRandom extends Thread
+{
+	Random random=new Random();
+	public int n;
+	GenRandom(int n)
+	{
+		this.n=n;
+	}
+	public void run()
+	{
+		for(int i=0;i<n;i++)
+		{
+			int a=random.nextInt(1000);
+			try
+			{
+				Thread.sleep(1000);
+			}
+			catch(InterruptedException e)
+			{
+				System.out.println(".");
+			}
+			if(a%2==0)
+			{
+				Even e=new Even(a);
+			}
+			else
+			{
+				Odd o=new Odd(a);
+			}
+		}
+	}
+	public static void main(String[] args)
+	{
+		GenRandom a=new GenRandom(5);
+		a.start();
+	}
+}
+class Even extends Thread
+{
+	Even(int a)
+	{
+		System.out.println("Even->square->"+a*a);
+	}
+}
+class Odd extends Thread
+{
+	Odd(int a)
+	{
+		System.out.println("Odd->cube->"+a*a*a);
+	}
+}
+output:
+Even->square->16900
+Even->square->586756
+Even->square->360000
+Odd->cube->103161709
+Odd->cube->3442951

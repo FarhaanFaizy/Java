@@ -1,0 +1,31 @@
+class operator
+{
+	int a=10,b=2;
+	public static void main(String[] args)
+	{
+		operator ob=new operator();
+		System.out.println(ob.a+ob.b);
+		System.out.println(ob.a-ob.b);
+		System.out.println(ob.a*ob.b);
+		System.out.println(ob.a/ob.b);
+		System.out.println(ob.a|ob.b);
+		System.out.println(ob.a&ob.b);
+		System.out.println(ob.a^ob.b);
+		System.out.println(~ob.a);
+		System.out.println(~ob.b);
+		System.out.println(ob.a>>ob.b);
+		System.out.println(ob.a<<ob.b);
+	}
+}
+output:
+12
+8
+20
+5
+10
+2
+8
+-11
+-3
+2
+40

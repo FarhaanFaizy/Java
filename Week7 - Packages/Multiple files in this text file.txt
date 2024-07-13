@@ -1,0 +1,46 @@
+------------------------------------------------------------------------------------------
+package Pack1;
+public class A
+{
+	public int publ=10;
+	protected int prot=20;
+}
+------------------------------------------------------------------------------------------
+package Pack2;
+import Pack1.*;
+class B extends Pack1.A
+{
+	void showprotected()
+	{
+		System.out.println("protected variable(in other package through inheritance) ="+prot);
+	}
+	int defa=40;
+}
+------------------------------------------------------------------------------------------
+package Pack2;
+import Pack1.*;
+class C
+{
+	private static int priv=30;
+	public static void main(String[] args)
+	{
+		Pack1.A ob1=new Pack1.A();
+		System.out.println("public variable(not in same package) ="+ob1.publ);
+		B ob2=new B();
+		ob2.showprotected();
+		System.out.println("deafult variable(in same package)="+ob2.defa);
+		System.out.println("private variable(in same class)="+priv);
+	}
+}
+------------------------------------------------------------------------------------------
+command line:
+javac -d . A.java
+javac -d . B.java
+javac -d . C.java
+java Pack2.C
+------------------------------------------------------------------------------------------
+output:
+public variable(not in same package) =10
+protected variable(in other package through inheritance) =20
+deafult variable(in same package)=40
+private variable(in same class)=30

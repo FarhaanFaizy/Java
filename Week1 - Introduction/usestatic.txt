@@ -1,0 +1,16 @@
+class usestatic
+{
+	static int a=23;
+	static void show(int in)
+	{
+		System.out.println(in);
+		System.out.println(a);
+	}
+	public static void main(String[] args)
+	{
+		show(10);
+	}
+} 
+output:
+10
+23

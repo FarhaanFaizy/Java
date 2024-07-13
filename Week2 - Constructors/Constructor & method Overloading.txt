@@ -1,0 +1,42 @@
+import java.util.*;
+class Overload
+{
+	int n;
+	Overload()
+	{
+		System.out.println("non parametrized creation of object occured");
+	}
+	Overload(int n)
+	{
+		this.n=n;
+		System.out.println("parametrized object is instantiated where n="+n);
+	}
+	void display()
+	{
+		System.out.println(n);
+	}
+	void display(int n)
+	{
+		System.out.println(n);
+	}
+	public static void main(String []arg)
+	{
+		System.out.println("--Constructor overloading--");
+		Overload ob=new Overload();
+		Overload ob1=new Overload(5);
+		System.out.println("--Method overloading--");
+		ob.display();
+		ob.display(20);
+		ob1.display();
+		ob1.display(20);
+	}
+}
+OUTPUT:
+--Constructor overloading--
+non parametrized creation of object occured
+parametrized object is instantiated where n=5
+--Method overloading--
+0
+20
+5
+20

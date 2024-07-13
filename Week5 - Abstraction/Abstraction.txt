@@ -1,0 +1,48 @@
+import java.util.*;
+abstract class Figure
+{
+	int a,b;
+	abstract float area();
+}
+class Rectangle extends Figure
+{
+	float area()
+	{
+		float area=a*b;
+		return area;
+	}
+}
+class Triangle extends Figure
+{
+	float area()
+	{
+		float area=a*b/2;
+		return area;
+	}
+}
+class MainClass
+{
+	public static void main(String[] args)
+	{
+		Scanner sc=new Scanner(System.in);
+		System.out.println("Enter sides of rectangle:");
+		Rectangle ob1=new Rectangle();
+		ob1.a=sc.nextInt();
+		ob1.b=sc.nextInt();
+		float a1=ob1.area();
+		System.out.println("Area="+a1);
+		System.out.println("Enter base and height of triangle:");
+		Triangle ob2=new Triangle();
+		ob2.a=sc.nextInt();
+		ob2.b=sc.nextInt();
+		float a2=ob2.area();
+		System.out.println("Area="+a2);
+	}
+}
+output:
+Enter sides of rectangle:
+2 4
+Area=8.0
+Enter base and height of triangle:
+3 4
+Area=6.0

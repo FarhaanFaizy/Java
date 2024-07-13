@@ -1,0 +1,34 @@
+final class DC
+{
+	int x=3;
+	final void show()
+	{
+		System.out.println("---");
+	}
+}
+class Final extends DC
+{
+	final int a=10;
+	void show()
+	{
+		System.out.println("-");
+	} 
+	public static void main(String[] args)
+	{
+		Final ob=new Final();
+		ob.a++;
+		System.out.println(ob.a);
+		ob.show();
+	}
+}
+output:
+Final.java:9: cannot inherit from final DC
+class Final extends DC
+                    ^
+Final.java:12: show() in Final cannot override show() in DC; overridden method is final
+        void show()
+             ^
+Final.java:19: cannot assign a value to final variable a
+                ob.a++;
+                  ^
+3 errors

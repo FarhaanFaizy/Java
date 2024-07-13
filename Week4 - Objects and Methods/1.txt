@@ -1,0 +1,74 @@
+import java.util.*;
+class Employee
+{
+	Scanner sc=new Scanner(System.in);
+	int id;
+	String name,des;
+	void reademp()
+	{
+		System.out.printf("\nEnter Employee name:");
+		name=sc.nextLine();
+		System.out.printf("Enter Employee designation:");
+		des=sc.nextLine();
+		System.out.printf("Enter Employee id:");
+		id=sc.nextInt();
+	}
+}
+class Salary extends Employee
+{
+	Scanner sc=new Scanner(System.in);
+	int bp,hra,da,pf,np;
+	void readsalary()
+	{
+		System.out.println("Enter BP,HRA,DA,PF in order respectively:");
+		bp=sc.nextInt();
+		hra=sc.nextInt();
+		da=sc.nextInt();
+		pf=sc.nextInt();
+	}
+	void calculatesalary()
+	{
+		np=bp+hra+da-pf;
+	}
+	void displayemp()
+	{
+		System.out.printf("Name       :%s\nid         :%s\nDesignation:%s\nNet Pay    :%s\n",name,id,des,np);
+	}
+	public static void main(String[] args)
+	{
+		Scanner sc=new Scanner(System.in);
+		System.out.printf("\nEnter number of employees:");
+		int n=sc.nextInt();
+		Salary ob[]=new Salary[n];
+		for(int i=0;i<n;i++)
+		{
+			ob[i]=new Salary();
+			ob[i].reademp();
+			ob[i].readsalary();
+			ob[i].calculatesalary();
+			ob[i].displayemp();
+		}
+	}
+}
+output:
+Enter number of employees:2
+
+Enter Employee name:f
+Enter Employee designation:asf
+Enter Employee id:123
+Enter BP,HRA,DA,PF in order respectively:
+1232 345 54 23
+Name       :f
+id         :123
+Designation:asf
+Net Pay    :1608
+
+Enter Employee name:dsf
+Enter Employee designation:dfsg
+Enter Employee id:34
+Enter BP,HRA,DA,PF in order respectively:
+234 4563 345 65
+Name       :dsf
+id         :34
+Designation:dfsg
+Net Pay    :5077
